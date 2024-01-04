@@ -20,7 +20,7 @@ jobs:
       run: dotnet restore
       
     - name: Pack
-      run: dotnet pack Sentinela.Web.Utils/Sentinela.Web.Utils.csproj -c Release -o out
+      run: dotnet pack Sentinela.Utils/Sentinela.Utils.csproj -c Release -o out
       
     - name: Push to nuGet
       run: dotnet nuget push "./out/*.nupkg" --api-key ${{ secrets.NUGET_DEPLOY_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
